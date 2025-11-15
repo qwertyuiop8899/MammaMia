@@ -2,7 +2,7 @@ name: Conditional Sync Upstream, Build, and Push Docker Image
 
 on:
   schedule:
-    - cron: '0 * * * *'  # ogni ora
+    - cron: '0 3,6,9,12,15,18,21 * * *'  # ogni ora
   workflow_dispatch:
   push:
     branches: [main]
@@ -117,5 +117,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: dula117/mammamia:latest
+          tags: qwertyuiop8899/mammamia:latest
         if: steps.sync.outputs.no_change == 'false'
